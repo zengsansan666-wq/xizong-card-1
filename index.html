@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>西综抽背</title>
+</head>
+<body style="text-align:center;font-family:sans-serif;">
+
+<h2>🧠 西综抽背</h2>
+
+<button onclick="draw()">抽一题</button>
+
+<p id="q" style="font-size:18px;margin:20px;"></p>
+
+<button onclick="show()">看答案</button>
+
+<p id="a" style="color:green;font-size:16px;"></p>
+
+<script>
+let questions = [
+  {q:"低血压+心率快+少尿 → 哪类休克？", a:"低血容量性休克"},
+  {q:"ACEI为什么引起干咳？", a:"缓激肽增多"},
+  {q:"β1受体作用？", a:"心率↑ 收缩力↑"},
+  {q:"代谢性酸中毒如何代偿？", a:"呼吸加快排CO₂"},
+  {q:"高钾血症心电图特点？", a:"T波高尖"}
+];
+
+let current;
+
+function draw(){
+  current = questions[Math.floor(Math.random()*questions.length)];
+  document.getElementById("q").innerText = current.q;
+  document.getElementById("a").innerText = "";
+}
+
+function show(){
+  document.getElementById("a").innerText = current.a;
+}
+</script>
+
+</body>
+</html>
